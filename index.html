@@ -105,7 +105,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
   </div>
 </header>
 
-<main class="max-w-2xl mx-auto px-4 py-8">
+<main role="main" class="max-w-2xl mx-auto px-4 py-8">
   <div class="bg-white rounded-2xl shadow p-6 mb-6">
     <p class="text-gray-600 text-sm leading-relaxed">2019年10月から幼児教育・保育の無償化がスタート。3〜5歳は認可保育所・幼稚園・認定こども園が原則無料になりました。0〜2歳は世帯収入に応じた保育料となります。あなたのご家族に最適な園を診断しましょう。</p>
   </div>
@@ -121,8 +121,8 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
       <div id="question-area"></div>
     </div>
     <div class="flex gap-3">
-      <button id="prev-btn" onclick="prevStep()" class="hidden flex-1 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition">戻る</button>
-      <button id="next-btn" onclick="nextStep()" class="flex-1 py-3 bg-pink-500 text-white rounded-xl font-semibold hover:bg-pink-600 transition">次へ</button>
+      <button id="prev-btn" onclick="prevStep()" class="hidden flex-1 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition" aria-label="戻る">戻る</button>
+      <button id="next-btn" onclick="nextStep()" class="flex-1 py-3 bg-pink-500 text-white rounded-xl font-semibold hover:bg-pink-600 transition" aria-label="次へ">次へ</button>
     </div>
   </div>
 
@@ -267,7 +267,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
     q.options.forEach(opt => {
       const checked = answers[q.id] === opt ? 'checked' : '';
       html += `<label class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-pink-400 transition has-[:checked]:border-pink-500 has-[:checked]:bg-pink-50">
-        <input type="radio" name="${q.id}" value="${opt}" ${checked} class="accent-pink-500"> <span class="text-sm">${opt}</span>
+        <input type="radio" name="${q.id}" value="${opt}" ${checked} class="accent-pink-500" aria-label="入力フォーム"> <span class="text-sm">${opt}</span>
       </label>`;
     });
     html += '</div>';
